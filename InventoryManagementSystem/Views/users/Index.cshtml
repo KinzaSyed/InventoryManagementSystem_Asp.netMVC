@@ -1,0 +1,84 @@
+﻿@model IEnumerable<InventoryManagementSystem.user>
+
+@{
+    ViewBag.Title = "Index";
+            Layout = "~/Views/Shared/_sidePanelPage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.u_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.u_username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.u_password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.u_phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.u_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.u_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.role.r_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.u_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.u_username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.u_password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.u_phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.u_email)
+        </td>
+        <td>
+
+            @{
+                if (item.u_status == Convert.ToByte(1))
+                {
+                    <text>Active</text>
+                }
+                else if (item.u_status == 0)
+                {
+                    <text>In Active</text>
+                }
+
+            }
+
+
+            @*@Html.DisplayFor(modelItem => item.u_status)*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.role.r_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.u_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.u_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.u_id })
+        </td>
+    </tr>
+}
+
+</table>

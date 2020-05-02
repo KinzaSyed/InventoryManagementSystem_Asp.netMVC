@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_sidePanelPage.cshtml";
+}
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<h2>Purchase Invoice</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Date")<br />
+    <input type="date" id="datePicker" name="datePicker" /> <br />
+
+    @Html.Label("Suppliers") <br />
+    @Html.DropDownList("Supplier", ViewBag.suppList as SelectList)<br />
+
+    <table>
+        <tr>
+            <th>
+                Product
+            </th>
+            <th>
+                Barcode
+            </th>
+            <th>
+                Expiry
+            </th>
+            <th>
+                No. of Cartoons
+            </th>
+            <th>
+                Per Cartoon Quantity
+            </th>
+            <th>
+                Buying Price
+            </th>
+            <th>
+
+            </th>
+        </tr>
+        <tr>
+            <td> @Html.Editor("ProductName")<br /></td>
+            <td>
+                @Html.Editor("ProductBarcode")<br />
+            </td>
+
+            <td>
+                <input type="date" id="exdatePicker" name="exdatePicker" /> <br />
+            </td>
+            <td>
+                @Html.Editor("CartoonTxt")<br />
+            </td>
+            <td>
+                @Html.Editor("pieceTxt")<br />
+            </td>
+            <td>
+                @Html.Editor("buyingTxt")<br />
+            </td>
+            <td>
+                <input type="button" class="click" value="ADD" />
+            </td>
+
+
+
+        </tr>
+
+    </table>
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Product
+                </th>
+                <th>
+                    Barcode
+                </th>
+                <th>
+                    Expiry
+                </th>
+                <th>
+                    No. of Cartoons
+                </th>
+                <th>
+                    Per Cartoon Quantity
+                </th>
+                <th>
+                    Buying Price
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+    </table>
+
+    <input type="button" name="remBtn" value="DELETE" class="del" />
+
+
+
+
+}
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="~/Scripts/TableJS.js"></script>
+<link href="~/Content/Site.css" rel="stylesheet" />

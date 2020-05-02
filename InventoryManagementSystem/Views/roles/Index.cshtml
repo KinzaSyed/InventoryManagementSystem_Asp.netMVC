@@ -1,0 +1,56 @@
+﻿@model IEnumerable<InventoryManagementSystem.role>
+
+@{
+    ViewBag.Title = "Index";
+            Layout = "~/Views/Shared/_sidePanelPage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.r_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.r_status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.r_name)
+        </td>
+
+
+
+        <td>
+            @{ 
+                if(item.r_status == Convert.ToByte(1))
+                {
+                    <p>Active</p>
+                }
+                else if (item.r_status == 0)
+                {
+                    <p>In Active</p>
+                }
+
+            }
+
+
+            @*@Html.DisplayFor(modelItem => item.r_status)*@
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.r_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.r_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.r_id })
+        </td>
+    </tr>
+}
+
+</table>

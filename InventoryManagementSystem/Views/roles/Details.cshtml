@@ -1,0 +1,48 @@
+﻿@model InventoryManagementSystem.role
+
+@{
+    ViewBag.Title = "Details";
+            Layout = "~/Views/Shared/_sidePanelPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>role</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.r_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.r_name)
+        </dd>
+
+        <dt>
+
+            @Html.DisplayNameFor(model => model.r_status)
+        </dt>
+
+        <dd>
+            @{
+                if (Model.r_status == Convert.ToByte(1))
+                {
+                    <text>Active</text>
+                }
+                else if (Model.r_status == 0)
+                {
+                    <text>In Active</text>
+                }
+
+            }
+
+            @*@Html.DisplayFor(model => model.r_status)*@
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.r_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

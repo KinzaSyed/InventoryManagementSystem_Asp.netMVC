@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="inventoryDBModelStoreContainer" CdmEntityContainer="inventoryDBEntities">
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="inventoryDBModel.category">
+        <MappingFragment StoreEntitySet="categories">
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+          <ScalarProperty Name="cat_name" ColumnName="cat_name" />
+          <ScalarProperty Name="cat_status" ColumnName="cat_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="inventoryDBModel.role">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="r_id" ColumnName="r_id" />
+          <ScalarProperty Name="r_name" ColumnName="r_name" />
+          <ScalarProperty Name="r_status" ColumnName="r_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="inventoryDBModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="u_name" ColumnName="u_name" />
+          <ScalarProperty Name="u_username" ColumnName="u_username" />
+          <ScalarProperty Name="u_password" ColumnName="u_password" />
+          <ScalarProperty Name="u_phone" ColumnName="u_phone" />
+          <ScalarProperty Name="u_email" ColumnName="u_email" />
+          <ScalarProperty Name="u_status" ColumnName="u_status" />
+          <ScalarProperty Name="u_roleID" ColumnName="u_roleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="st_getLoginDetails" FunctionName="inventoryDBModel.Store.st_getLoginDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="inventoryDBModel.st_getLoginDetails_Result">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="st_getRoleWRTuser" FunctionName="inventoryDBModel.Store.st_getRoleWRTuser" />
+    <EntitySetMapping Name="PIDetails">
+      <EntityTypeMapping TypeName="inventoryDBModel.PIDetail">
+        <MappingFragment StoreEntitySet="PIDetails">
+          <ScalarProperty Name="pid_proID" ColumnName="pid_proID" />
+          <ScalarProperty Name="pid_purchaseID" ColumnName="pid_purchaseID" />
+          <ScalarProperty Name="pid_id" ColumnName="pid_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="inventoryDBModel.product">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="pro_buyingPrice" ColumnName="pro_buyingPrice" />
+          <ScalarProperty Name="pro_expiryDate" ColumnName="pro_expiryDate" />
+          <ScalarProperty Name="pro_barcode" ColumnName="pro_barcode" />
+          <ScalarProperty Name="pro_name" ColumnName="pro_name" />
+          <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchaseInvoices">
+      <EntityTypeMapping TypeName="inventoryDBModel.purchaseInvoice">
+        <MappingFragment StoreEntitySet="purchaseInvoice">
+          <ScalarProperty Name="pi_suppID" ColumnName="pi_suppID" />
+          <ScalarProperty Name="pi_date" ColumnName="pi_date" />
+          <ScalarProperty Name="pi_id" ColumnName="pi_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="suppliers">
+      <EntityTypeMapping TypeName="inventoryDBModel.supplier">
+        <MappingFragment StoreEntitySet="suppliers">
+          <ScalarProperty Name="sup_openingBalance" ColumnName="sup_openingBalance" />
+          <ScalarProperty Name="sup_phone" ColumnName="sup_phone" />
+          <ScalarProperty Name="sup_address" ColumnName="sup_address" />
+          <ScalarProperty Name="sup_name" ColumnName="sup_name" />
+          <ScalarProperty Name="sup_id" ColumnName="sup_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stocks">
+      <EntityTypeMapping TypeName="inventoryDBModel.Stock">
+        <MappingFragment StoreEntitySet="Stock">
+          <ScalarProperty Name="st_purchaseInvID" ColumnName="st_purchaseInvID" />
+          <ScalarProperty Name="st_proPieces" ColumnName="st_proPieces" />
+          <ScalarProperty Name="st_proCartoon" ColumnName="st_proCartoon" />
+          <ScalarProperty Name="st_proID" ColumnName="st_proID" />
+          <ScalarProperty Name="st_id" ColumnName="st_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e9dc26b6b67441a199570701da522217" Name="Diagram1">
+        <EntityTypeShape EntityType="inventoryDBModel.category" Width="1.5" PointX="4.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryDBModel.role" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryDBModel.user" Width="1.5" PointX="2.5" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="inventoryDBModel.FK__users__u_roleID__15502E78" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="inventoryDBModel.PIDetail" Width="1.5" PointX="9.875" PointY="0.5" />
+        <EntityTypeShape EntityType="inventoryDBModel.product" Width="1.5" PointX="11.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryDBModel.purchaseInvoice" Width="1.5" PointX="7.875" PointY="0.5" />
+        <EntityTypeShape EntityType="inventoryDBModel.supplier" Width="1.5" PointX="6" PointY="0.5" />
+        <AssociationConnector Association="inventoryDBModel.FK__PIDetails__pid_p__21B6055D" />
+        <AssociationConnector Association="inventoryDBModel.FK__purchaseI__pi_su__1ED998B2" />
+        <AssociationConnector Association="inventoryDBModel.FK_PIDetails_products" />
+        <EntityTypeShape EntityType="inventoryDBModel.Stock" Width="1.5" PointX="9.375" PointY="3.875" />
+        <AssociationConnector Association="inventoryDBModel.FK__Stock__st_proID__25869641" />
+        <AssociationConnector Association="inventoryDBModel.FK__Stock__st_purcha__267ABA7A" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
